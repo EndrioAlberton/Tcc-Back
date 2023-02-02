@@ -106,7 +106,7 @@ export const removeLibraryReader = async (request: Request, response: Response) 
         })
         
         await getRepository(Libraries).save(library);      
-        return;  
+        return response.json({ message: 'Leitor removido' });  
 
     }  if (checkReaderLoan.loans !== null){
 
@@ -120,11 +120,11 @@ export const removeLibraryReader = async (request: Request, response: Response) 
         } if (loan.library.id !== Number(libraryId)) {  
             
             library.readers = library.readers.filter((readers) => { 
-                return readers.id !== removeReaderLibrary.id; 
+                readers.id !== removeReaderLibrary.id; 
             })
             
             await getRepository(Libraries).save(library);      
-            return;  
+            return response.json({ message: 'Leitor removido' });  
         }
     }
 }; 

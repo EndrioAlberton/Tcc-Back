@@ -12,4 +12,4 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(3010, () => console.log(`🔥 - Server running on port 3010`))
+app.listen(3011, () => console.log(`🔥 - Server running on port 3010`))

@@ -31,7 +31,7 @@ export const getReadersLibrary = async (request: Request, response: Response) =>
            
     if(!libraryReaders) return response.status(404).json({ message: 'Nenhum dado foi encontrado' });  
 
-    return response.json(libraryReaders.readers);
+    return response.json(libraryReaders.readers); 
   }
    
   export const findByIdReader = async (id: string, relations=true): Promise<Readers> => {
