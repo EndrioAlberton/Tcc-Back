@@ -140,7 +140,6 @@ export const updateLibrary = async (request: Request, response: Response) => {
 
     const { password: hashedPassword } = library;
 
-
     const isPasswordEquals = await comparePasswords(passwordBody, hashedPassword); 
     if (isPasswordEquals){ 
         const libraryNewValues = await getRepository(Libraries).update(id, request.body); 
@@ -152,7 +151,7 @@ export const updateLibrary = async (request: Request, response: Response) => {
      
         return response.json({ message: 'Biblioteca não encontrado' });  
     }  if (!isPasswordEquals){ 
-        console.log("Senha errada")
+        return response.json({ message: 'Senha errada' });  
     }
 };    
  

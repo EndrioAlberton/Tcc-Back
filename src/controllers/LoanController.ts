@@ -66,9 +66,9 @@ export const saveLoan = async (request: Request, response: Response) => {
         
         const checkReaderLoan = await findByIdReader(readerId)
 
-        if(!reader) return response.status(404).json({ message: 'ID não corresponde a nenhum leitor '});  
+        if(!reader) return  console.log("!reader")//response.json({ message: 'ID não corresponde a nenhum leitor'});  
 
-        if (checkReaderLoan.loans !== null) return response.json('Leitor já tem um empréstimo') //response.status(404).json({ message: 'Leitor já tem um empréstimo'}) ;
+        if (checkReaderLoan.loans !== null) return response.json('Leitor já tem um empréstimo');
         
         if (checkBook.library.id !== Number(libraryId)) return response.json('Livro não faz parte da bibliteca')  //response.status(404).json({ message: 'Livro não faz parte da bibliteca' }); 
 
@@ -76,7 +76,7 @@ export const saveLoan = async (request: Request, response: Response) => {
 
         const checkReaderLibrary = libraries.filter(library => (library.id === Number(libraryId)))
 
-        if (checkReaderLibrary[0].id !== Number(libraryId)) return;
+        if (checkReaderLibrary.length === 0) return response.json('Leitor não faz parte da bibliteca');
 
         loan.library = library;
 

@@ -21,7 +21,7 @@ export const getNotLibraryReaders = async (request: Request, response: Response)
 export const getReader = async (request: Request, response: Response) => {
     const { readerId }  = request.params;  
     const reader = await findByIdReader(readerId);   
-
+    if (!reader) return response.json({ message: 'ID não corresponde a nenhum leitor'});
     return response.json(reader);
 };    
   
@@ -130,7 +130,7 @@ export const updateReader = async (request: Request, response: Response) => {
         
         return response.status(404).json({ message: 'Leitor não encontrado' });  
     }  if (!isPasswordEquals){ 
-        console.log("Senha errada")
+        return response.json({ message: 'Senha errada' });  
     }
 
 };    
