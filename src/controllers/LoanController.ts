@@ -66,7 +66,7 @@ export const saveLoan = async (request: Request, response: Response) => {
         
         const checkReaderLoan = await findByIdReader(readerId)
 
-        if(!reader) return  console.log("!reader")//response.json({ message: 'ID não corresponde a nenhum leitor'});  
+        if(!reader) return response.json({ message: 'ID não corresponde a nenhum leitor'});  
 
         if (checkReaderLoan.loans !== null) return response.json('Leitor já tem um empréstimo');
         

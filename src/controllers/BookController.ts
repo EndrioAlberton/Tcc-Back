@@ -64,6 +64,10 @@ export const getBooksLibrary = async (request: Request, response: Response) => {
 export const saveBook = async (request: Request, response: Response) => {
     const book: Books = request.body;  
     const libraryId = request.params.libraryId;
+
+    if(book.name_image === undefined || book.url === undefined){ 
+        return response.json({ message: 'Imagem' })
+    }
     
     const library = await getRepository(Libraries).findOne({where: { id: libraryId }}); 
 

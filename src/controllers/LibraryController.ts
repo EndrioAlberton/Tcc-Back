@@ -55,9 +55,7 @@ export const getLibrariesSearch = async (request: Request, response: Response) =
             {nome: ILike(`%${name}%`),} 
             
         ]})     
-        
-    console.log(librarySearch)
-         
+                 
     if(!librarySearch) return response.status(404).json({ message: 'Nenhum dado foi encontrado' });  
 
     return response.json(librarySearch);

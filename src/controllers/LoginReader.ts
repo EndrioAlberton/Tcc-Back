@@ -9,10 +9,6 @@ export const validateLogin = async (email: string, password: string): Promise<Re
     let readerLogin: Readers = null;
     const reader = await findByEmail(email); 
 
-    if (!reader){ 
-        console.log("error")
-    }
-
     const { password: hashedPassword } = reader;
     
     const isPasswordEquals = await comparePasswords(password, hashedPassword); 
