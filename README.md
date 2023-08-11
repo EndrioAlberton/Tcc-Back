@@ -22,3 +22,50 @@ Esta documentação apresenta um sistema de backend desenvolvido em Node.js e Ty
 ```sh
 git clone https://github.com/EndrioAlberton/Tcc-Back.git
 cd Tcc-Back
+```
+
+### Instalação de Dependências:
+
+```sh
+npm install
+```
+
+### Instalação de Dependências:
+
+```sh
+npm run dev
+```
+# Documentação do Sistema
+
+## Funcionalidades Principais
+
+1. **Autenticação de Usuário:**
+   - Autenticação de usuários usando JSON Web Tokens (JWT).
+   - Implementação em `AuthController.ts` e `AuthService.ts`.
+   - Senhas são criptografadas usando bcrypt ou bcryptjs antes de serem armazenadas.
+
+2. **Gerenciamento de Bibliotecas:**
+   - APIs para gerenciar informações sobre livros, autores, usuários e empréstimos.
+   - Implementação em `LibraryController.ts` e `LibraryService.ts`.
+   - Dados armazenados em bancos de dados MySQL ou SQLite usando TypeORM.
+
+3. **Autenticação e Autorização:**
+   - Controle de acesso a rotas e recursos baseado em papéis de usuário.
+   - Autenticação e autorização de administradores e usuários regulares.
+
+4. **Empréstimos de Livros:**
+   - Funcionalidade para realizar empréstimos e devoluções de livros.
+   - Acompanhamento de datas de devolução e status de empréstimos.
+
+5. **Pesquisa de Livros:**
+   - Possibilidade de pesquisar livros por título, autor ou categoria.
+   - Fornecimento de resultados de pesquisa filtrados e relevantes.
+
+## Configuração do Banco de Dados
+
+Configure as informações de conexão ao banco de dados no arquivo `.env`.
+
+## Considerações Finais
+
+Esta documentação fornece uma visão abrangente das tecnologias, estrutura do projeto e principais funcionalidades do sistema. Certifique-se de enriquecer cada seção com exemplos, detalhes de implementação e fluxos de trabalho específicos do sistema. Isso garantirá que os desenvolvedores e stakeholders tenham uma compreensão completa do sistema e de suas capacidades.
+
