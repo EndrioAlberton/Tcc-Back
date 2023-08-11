@@ -35,8 +35,6 @@ npm install
 ```sh
 npm run dev
 ```
-# Documentação do Sistema
-
 ## Funcionalidades Principais
 
 1. **Autenticação de Usuário:**
@@ -60,10 +58,6 @@ npm run dev
 5. **Pesquisa de Livros:**
    - Possibilidade de pesquisar livros por título, autor ou categoria.
    - Fornecimento de resultados de pesquisa filtrados e relevantes.
-
-## Configuração do Banco de Dados
-
-Configure as informações de conexão ao banco de dados no arquivo `.env`.
 
 ## Considerações Finais
 
